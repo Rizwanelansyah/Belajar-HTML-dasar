@@ -8,22 +8,73 @@
         #judul{
             color: #0d04bd;
             font-family: calibri;
+            text-align: center;
+        }
+        #border{
+            margin: 5px ;
+            border: 1px solid black;
+            border-radius: 10px;  
         }
         #form{
+            margin: 25px;
+            font-family: calibri;
+        }
+        .input{
             border: 1px solid black;
+            border-radius: 5px;
+        }
+        #btn{
+            border: 1px solid greenyellow;
+            border-radius: 5px;
+            background-color: greenyellow;
+            color: green;
+            font-size: x-large;
         }
     </style>
 </head>
 <body>
     <h1 id="judul">Formulir Pendataan Siswa</h1>
-    <form action="/submit" method="POST" id="form">
-        <label for="name">Nama:</label><br>        
-        <input type="text" id="name" name="name" required>
-        <br>
-        <label for="email">Email:</label>
-        <input type="email" id="email" name="email" required>
-        <br>
-        <input type="submit" value="submit">
-    </form>
+    <div id="border">
+        <form action="/submit" method="POST" id="form">
+            <label for="name">Nama:</label><br>        
+            <input type="text" id="name" name="name" class="input" required>
+            <br>
+            <label for="email">Email:</label><br>
+            <input type="email" id="email" name="email" class="input" required>
+            <br>
+            <label for="pw">Password:</label><br>
+            <input type="Password" id="pw" name="pw" class="input" required><br>
+            <label for="usia">Usia:</label><br>
+            <input type="number" id="usia" name="usia" class="input" min="10" max="100" required><br>
+            <label for="tl">Tanggal Lahir::</label><br>
+            <input type="date" id="tl" name="tl" class="input" required><br><br>
+            Hobi : <br>
+            <label>Membaca buku<input type="checkbox" name="mb" value="mb"></label>
+            <label>Menonton <input type="checkbox" name="mt" value="mn"></label>
+            <label>Berbelanja<input type="checkbox" name="bl" value="bl"></label><br>
+            <label>Travelling<input type="checkbox" name="tr" value="tr"></label>
+            <label>Olahraga<input type="checkbox" name="or" value="or"></label><br><br><br>
+            Sodara Kandung:<br>
+            <label>1<input type="radio" value="1"></label>
+            <label>2<input type="radio" value="2"></label>
+            <label>3<input type="radio" value="3"></label>
+            <label>4<input type="radio" value="4"></label>
+            <label>5<input type="radio" value="5"></label><br>
+            Kelas:<br>
+            <label>
+                <select name="kelas">
+                    <option selected hidden>---PilihKelas---</option>
+                    <option value="XI RPL 1">XI RPL 1</option>
+                    <option value="XI RPL 2">XI RPL 2</option>
+                    <option value="XI RPL 3">XI RPL 3</option>
+                </select>
+            </label><br>
+            <label>
+                Kesan dan Pesan:<br>
+                <textarea name="KnP" id="Knp" cols="200" rows="10"></textarea>
+            </label><br>
+            <input type="submit" value="kirim" id="btn">
+        </form>
+    </div>
 </body>
 </html>
